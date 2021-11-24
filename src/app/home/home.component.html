@@ -1,0 +1,52 @@
+<body>
+  <header>
+    <section class="filter" id="jobFilter">
+      <ul>
+        <li *ngIf="showFrontend==true"><span>All Jobs</span><a (click)="getData()"></a></li>
+        <li *ngIf="showFrontend==true"><span>Frontend</span><a (click)="filterData('Frontend')"></a></li>
+        <li *ngIf="showCss==true"><span>CSS</span><a (click)="filterData('CSS')"></a></li>
+
+  <li *ngIf="showJavascript==true"><span>Javascript</span><a (click)="filterData('JavaScript')"></a></li>
+      </ul>
+      <a (click)="getData()">Clear</a>
+    </section>
+  </header>
+  <main>
+  <div *ngFor="let job of jobList; index as i; first as isFirst">
+    <section class="job-list" id="jobList">
+      <div class="job-info">
+        <div class="logo-job">
+          <img src="{{job.logo}}" />
+          <div class="job-snapshot">
+            <div class="additional">
+              <h2>{{job.company}}</h2>
+              <span class="badge new">New!</span>
+              <span class="badge featured">Featured</span>
+            </div>
+            <h1 class="job-title">{{job.position}}</h1>
+            <ul class="time-place">
+              <li>1d ago</li>
+              <li>.</li>
+              <li>Full Time</li>
+              <li>.</li>
+              <li>{{job.location}}</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="job-tags" >
+          <li><a (click)="filterData(job.role)" class="tag-badge">{{job.role}}</a></li>
+          <li  *ngFor="let tag of job.languages"><a (click)="filterData(tag)" class="tag-badge">{{tag}}</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Eklemis Santo Ndun</a>.
+    </div>
+  </footer>
+</body>
