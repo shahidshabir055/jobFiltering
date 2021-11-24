@@ -20,14 +20,14 @@
           <div class="job-snapshot">
             <div class="additional">
               <h2>{{job.company}}</h2>
-              <span class="badge new">New!</span>
-              <span class="badge featured">Featured</span>
+              <span *ngIf="job.new==true"  class="badge new">New!</span>
+              <span *ngIf="job.featured==true" class="badge featured">Featured</span>
             </div>
             <h1 class="job-title">{{job.position}}</h1>
             <ul class="time-place">
-              <li>1d ago</li>
+              <li>{{job.postedAt}}</li>
               <li>.</li>
-              <li>Full Time</li>
+              <li>{{job.contract}}</li>
               <li>.</li>
               <li>{{job.location}}</li>
             </ul>

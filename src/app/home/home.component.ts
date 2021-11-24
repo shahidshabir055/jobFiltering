@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     this.getData();
 }
  filterData(tag: any) {
+  this.getData();
   this.jobList1 = this.jobList.filter((d:any) => d.languages.includes(tag) || d.role.includes(tag) );
   console.log(this.jobList1);
   this.jobList =this.jobList1;
