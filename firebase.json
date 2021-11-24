@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist\\jobfiltering",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
